@@ -3,7 +3,7 @@ import React from 'react'
 export const Categories = () => {
   return (
     <div>
-      <h1>Categories</h1>
+      <h2 data-testid='categories-heading'>Categories</h2>
     </div>
   )
 }
