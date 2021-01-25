@@ -1,10 +1,11 @@
 
 import React from 'react'
 
-export const Category = () => {
+export const Category = ({category}) => {
+  console.log(category)
   return (
     <div>
-      <h2 data-testid='category-heading'>Category</h2>
+      <h2 data-testid='category-heading'>{category.strCategory}</h2>
     </div>
   )
 }
