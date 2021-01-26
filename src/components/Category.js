@@ -28,7 +28,7 @@ export const Category = () => {
     <>
       <h2 data-testid="category-heading">Category</h2>
       {data.meals.map((meal) => (
-        <Link data-testid='meal-link' key={meal.idMeal} to={`/${meal.idMeal}`}>
+        <Link data-testid='meal-link' key={meal.idMeal} to={`/category/${meal.idMeal}`}>
           <h3>{meal.strMeal}</h3>
         </Link>
       ))}

@@ -29,7 +29,7 @@ export const Categories = () => {
     <>
       <h2 data-testid="categories-heading">Categories</h2>
       {data.categories.map((category) => (
-        <Link data-testid='category-link' key={category.idCategory} to={`/${category.idCategory}`}>
+        <Link data-testid='category-link' key={category.idCategory} to={`/category/${category.idCategory}`}>
           <h3>{category.strCategory}</h3>
         </Link>
       ))}
