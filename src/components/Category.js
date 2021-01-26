@@ -10,11 +10,15 @@ export const Category = ({match}) => {
   }, []);
 
   const loadData = async () => {
-    const response = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${match.params.id}` //static placeholder
-    );
-    const data = await response.json();
-    setData(data)
+    try {
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${match.params.id}` //static placeholder
+      );
+      const data = await response.json();
+      setData(data)
+    } catch(e){
+      console.log(e)
+    }
   };
 
   if (!data)
