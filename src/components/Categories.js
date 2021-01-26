@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 export const Categories = () => {
   const [data, setData] = useState(null);
@@ -9,16 +8,15 @@ export const Categories = () => {
   }, []);
 
   const loadData = async () => {
-    try{
+    try {
       const response = await fetch(
         "https://www.themealdb.com/api/json/v1/1/categories.php"
       );
       const data = await response.json();
       setData(data);
-    } catch(e){
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
-    
   };
 
   if (!data)
@@ -33,11 +31,11 @@ export const Categories = () => {
     <>
       <h2 data-testid="categories-heading">Categories</h2>
       {data.categories.map((category) => (
-        <Link to
-          data-testid='category-link' 
-          key={category.idCategory} 
+        <Link
+          to
+          data-testid="category-link"
+          key={category.idCategory}
           to={`/${category.strCategory}`}
-           
         >
           <h3>{category.strCategory}</h3>
         </Link>
