@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
-import { Category } from "./Category";
 
 
 export const Categories = () => {
@@ -29,7 +28,12 @@ export const Categories = () => {
     <>
       <h2 data-testid="categories-heading">Categories</h2>
       {data.categories.map((category) => (
-        <Link data-testid='category-link' key={category.idCategory} to={`/category/${category.idCategory}`}>
+        <Link to
+          data-testid='category-link' 
+          key={category.idCategory} 
+          to={`/${category.strCategory}`}
+           
+        >
           <h3>{category.strCategory}</h3>
         </Link>
       ))}
