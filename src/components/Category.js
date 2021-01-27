@@ -19,9 +19,11 @@ export const Category = ({ match }) => {
     return (
       <>
         <h2 data-testid="category-loaded-heading">{categoryName} Meals</h2>
-        {data.meals.map((meal) => (
-         <Meal key={meal.idMeal} categoryName={categoryName} meal={meal}/>
-        ))}
+        <div class="category-meals">
+          {data.meals.map((meal) => (
+          <Meal key={meal.idMeal} categoryName={categoryName} meal={meal}/>
+          ))}
+        </div>
       </>
     );
 };
