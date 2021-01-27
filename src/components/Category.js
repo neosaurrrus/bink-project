@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import fetchToState from "../utils/fetchToState";
+import {Meal} from "./Meal"
 
 export const Category = ({ match }) => {
   const categoryName = match.params.id;
@@ -20,9 +20,7 @@ export const Category = ({ match }) => {
       <>
         <h2 data-testid="category-loaded-heading">{categoryName} Meals</h2>
         {data.meals.map((meal) => (
-          <Link key={meal.idMeal} to={`/${categoryName}/${meal.idMeal}`}>
-            <h3>{meal.strMeal}</h3>
-          </Link>
+         <Meal key={meal.idMeal} categoryName={categoryName} meal={meal}/>
         ))}
       </>
     );
