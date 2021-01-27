@@ -7,6 +7,7 @@ import {
 
 import {Categories} from './components/Categories'
 import {Category} from './components/Category'
+import { Recipe } from "./components/Recipe";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
     
     <Switch>
         <Route exact path="/" component={Categories} />
-        <Route path="/:id" component={Category} />
+       
+        {/* <Route path="/:id" component={Category} /> */}
+        <Route exact path="/recipe" component={Recipe} />
     </Switch>
     </div>
   </Router>

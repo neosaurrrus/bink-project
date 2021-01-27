@@ -24,6 +24,8 @@ export const Category = ({ match }) => {
           <Meal key={meal.idMeal} categoryName={categoryName} meal={meal}/>
           ))}
         </div>
+
+        
       </>
     );
 };
