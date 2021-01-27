@@ -20,7 +20,7 @@ export const Category = ({ match }) => {
       <>
         <h2 data-testid="category-loaded-heading">{categoryName} Meals</h2>
         {data.meals.map((meal) => (
-          <Link key={meal.idMeal} to={`/${category}/${meal.idMeal}`}>
+          <Link key={meal.idMeal} to={`/${categoryName}/${meal.idMeal}`}>
             <h3>{meal.strMeal}</h3>
           </Link>
         ))}
