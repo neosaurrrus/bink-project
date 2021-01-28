@@ -22,8 +22,8 @@ export const Category = ({ match }) => {
     return (
       <Switch>
         <Route exact path={`/${categoryName}`}>
-          <h2 data-testid="category-loaded-heading">{categoryName} Meals</h2>
-          <div class="category-meals">
+          <h2 data-testid="category-heading">{categoryName} Meals</h2>
+          <div class="category-meals" data-testid="category-meals">
             {data.meals.map((meal) => (
               <Meal key={meal.idMeal} categoryName={categoryName} meal={meal} />
             ))}

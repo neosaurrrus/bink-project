@@ -1,5 +1,5 @@
 import React from "react";
-import fetchToState from "../utils/fetchToState";
+import FetchToState from "../utils/fetchToState";
 
 const buildIngredientList = (meal) => { // Gets the ingredients and measures in the meal and builds a combined JSX list 
   const ingredientsArr = Object.values(meal)
@@ -27,7 +27,7 @@ const buildInstructionList = (instructions) => { // Gets the instructions and pa
 export const Recipe = ({mealId}) => {
   
   
-  const [data, loading] = fetchToState(
+  const [data, loading] = FetchToState(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
   );
   if (loading) return <h1>Loading Recipe</h1>;
@@ -39,7 +39,7 @@ export const Recipe = ({mealId}) => {
   
   return (
     <div className="meal-recipe">
-      <h2>{strMeal}</h2> 
+      <h2 data-testid = "recipe-title">{strMeal}</h2> 
       <img src={strMealThumb} alt=""></img>
       <div>
         <h3>Ingredients</h3>
