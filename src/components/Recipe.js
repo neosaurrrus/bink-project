@@ -24,10 +24,11 @@ const buildInstructionList = (instructions) => { // Gets the instructions and pa
   });
 }
 
-export const Recipe = ({match}) => {
-  console.log(match)
+export const Recipe = ({mealId}) => {
+  
+  
   const [data, loading] = fetchToState(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
   );
   if (loading) return <h1>Loading Recipe</h1>;
   const meal = data.meals[0]
@@ -38,7 +39,7 @@ export const Recipe = ({match}) => {
   
   return (
     <div className="meal-recipe">
-      <h2>{strMeal}</h2>
+      <h2>{strMeal}</h2> 
       <img src={strMealThumb} alt=""></img>
       <div>
         <h3>Ingredients</h3>
