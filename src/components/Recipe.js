@@ -1,7 +1,8 @@
 import React from "react";
 import FetchToState from "../utils/fetchToState";
 
-const buildIngredientList = (meal) => { // Gets the ingredients and measures in the meal and builds a combined JSX list 
+const buildIngredientList = (meal) => {
+  // Gets the ingredients and measures in the meal and builds a combined JSX list
   const ingredientsArr = Object.values(meal)
     .slice(9, 28)
     .filter((v) => v);
@@ -11,36 +12,40 @@ const buildIngredientList = (meal) => { // Gets the ingredients and measures in 
     if (ingredient && measuresArr[index])
       return (
         <li key={index}>
-          {measuresArr[index]} - {ingredient}{" "}
+          {measuresArr[index]} {ingredient}
         </li>
       );
   });
-}
+};
 
-const buildInstructionList = (instructions) => { // Gets the instructions and parses into a JSX list.
+const buildInstructionList = (instructions) => {
+  // Gets the instructions and parses into a JSX list.
   const instructionsArr = instructions.split(". ");
   return instructionsArr.map((instruction, index) => {
     return <li key={index}>{instruction}</li>;
   });
-}
+};
 
-export const Recipe = ({mealId}) => {
-  
-  
+export const Recipe = ({ mealId }) => {
   const [data, loading] = FetchToState(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
   );
   if (loading) return <h1>Loading Recipe</h1>;
-  const meal = data.meals[0]
-  const { strMeal, strMealThumb, strInstructions } = meal;
+  const meal = data.meals[0];
+  const { strMeal, strMealThumb, strInstructions, strArea, strCategory } = meal;
 
-  const ingredientList = buildIngredientList(meal)
-  const instructionList = buildInstructionList(strInstructions)
-  
+  const ingredientList = buildIngredientList(meal);
+  const instructionList = buildInstructionList(strInstructions);
   return (
     <div className="meal-recipe">
-      <h2 data-testid = "recipe-title">{strMeal}</h2> 
-      <img src={strMealThumb} alt=""></img>
+      <div>
+        <h2 data-testid="recipe-title">{strMeal}</h2>
+        <h3>
+          {strArea} {strCategory}
+        </h3>
+        <img className="recipe-image" src={strMealThumb} alt=""></img>
+      </div>
+
       <div>
         <h3>Ingredients</h3>
         <ul>{ingredientList}</ul>
