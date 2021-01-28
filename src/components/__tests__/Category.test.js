@@ -40,6 +40,5 @@ test('<Category> fetches data' , async () => {
       </MemoryRouter>
   )
   await waitFor(() => getByTestId('meal-link'))
-  debugger
 
 });
