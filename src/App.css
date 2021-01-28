@@ -2,14 +2,7 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-
+/* Meal Component - would use styled components to keep CSS scoped if it were a more complex app */
 .category-meals {
   display: flex;
   margin: 0 auto;
@@ -22,7 +15,7 @@
 }
 
 .meal-card {
-  background: rgba(100, 100, 100, 0.3);
+  background: rgba(100, 100, 100, 0.1);
   display: flex;
   flex-direction: column;
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
@@ -34,4 +27,38 @@
 
 .meal-card img {
   width: 100%;
+}
+
+/* Recipe Component */
+
+.meal-recipe {
+  display: flex;
+  flex-direction: column;
+  flex: 3fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal-recipe div {
+  background: rgba(100, 100, 100, 0.1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  width: 80%;
+  max-width: 720px;
+  padding: 10px;
+}
+.meal-recipe div:not(:first-of-type) {
+  text-align: left;
+}
+
+.meal-recipe li {
+  line-height: 2;
+}
+
+.recipe-image {
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
 }
