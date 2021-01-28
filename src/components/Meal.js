@@ -3,7 +3,6 @@ import { useRouteMatch, Link } from 'react-router-dom';
 
 
 export const Meal = ({meal}) => {
-  console.log(meal)
   const {url} = useRouteMatch()
   
   return (
