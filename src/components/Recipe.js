@@ -34,7 +34,7 @@ export const Recipe = ({ mealId }) => {
   const meal = data.meals[0];
   const { strMeal, strMealThumb, strInstructions, strArea, strCategory } = meal;
 
-  const ingredientList = buildIngredientList(meal);
+  const ingredientList = buildIngredientList(meal)
   const instructionList = buildInstructionList(strInstructions);
   return (
     <div className="meal-recipe">
