@@ -3,7 +3,7 @@ import { render, cleanup} from "@testing-library/react";
 import { Category } from "../Category";
 import { MemoryRouter } from "react-router-dom";
 
-
+//In this test, shows the kind of tests that are 
 afterEach(() => {
   cleanup();
   console.error.mockClear();
@@ -44,5 +44,8 @@ test("<Category> can render in loading state", () => {
 //       <Category match={match} />
 //   </MemoryRouter>
 //   await waitFor(()=> screen.getByTestId('category-meals'))
+//   expect(getByTestId("category-heading").tagName).toBe("H2");
+//   expect(getByTestId("category-heading").textContent).toBe("Test Category Meals");
+
 
 // });

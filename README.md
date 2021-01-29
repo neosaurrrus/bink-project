@@ -2,7 +2,7 @@
 
 This is my submission for the Coding Test for Bink.
 
-
+All the user stories were implemented. As there was no steer on presentation I just focused on making the information from the API clear.
 
 ## Mock API Issue
 

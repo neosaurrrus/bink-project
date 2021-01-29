@@ -15,6 +15,7 @@ const buildIngredientList = (meal) => {
           {measuresArr[index]} {ingredient}
         </li>
       );
+    return false
   });
 };
 
