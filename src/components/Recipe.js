@@ -30,7 +30,7 @@ export const Recipe = ({ mealId }) => {
   const [data, loading] = FetchToState(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
   );
-  if (loading) return <h1>Loading Recipe</h1>;
+  if (loading) return <h2>Loading Recipe</h2>;
   const meal = data.meals[0];
   const { strMeal, strMealThumb, strInstructions, strArea, strCategory } = meal;
 
@@ -43,7 +43,7 @@ export const Recipe = ({ mealId }) => {
         <h3>
           {strArea} {strCategory}
         </h3>
-        <img className="recipe-image" src={strMealThumb} alt=""></img>
+        <img data-testid="recipe-image" className="recipe-image" src={strMealThumb} alt=""></img>
       </div>
 
       <div>
