@@ -1,8 +1,8 @@
 # Introduction
 
-This is my submission for the Coding Test for Bink.
+This is my submission for the Coding Test for Bink. You can see the running version [here](https://lukies-meal-app.netlify.app/)
 
-All the user stories were implemented. As there was no steer on presentation I just focused on making the information from the API clear.
+All the user stories were implemented. As no particular requirements on styling other than the thumbnail, I just focused on making the information from the API clear and responsive.
 
 ## Mock API Issue
 
@@ -16,9 +16,9 @@ I tried:
 2. Using Jest Spy.on function
 3. The RenderHook function of React-Testing-Library
 
-Each time it had an issue, typically with the JSON that was being used. Which leads me to believe it is a simple issue with how the data is being structured. While I am comfortable with hooks and react-testing-library, I had not combined the two till this week!
+Each time it had an issue, typically with the JSON that was being used. Which leads me to believe it is a simple issue with how the data is being structured.
 
-As a workaround in the time I had left, the testing is using the actual API call in a number of places which makes the tests more integration-based than Unit.
+As a workaround to preserve time, the testing is using the actual API call in a number of places which makes the tests more integration-based than Unit.
 
 ## Available Scripts
 
