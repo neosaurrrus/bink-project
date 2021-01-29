@@ -1,7 +1,7 @@
-import { render, screen  } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook} from '@testing-library/react-hooks'
 import FetchToState from '../utils/fetchToState'
 
+// I had trouble getting my custom hook and react-testing-library to talk properly in time so this is a *very* light test!
 
 beforeAll(() => {
     jest.spyOn(global, 'fetch')
@@ -17,12 +17,12 @@ afterEach(() => {
 
 const url = "https://test.com"
 
-test('FetchToState', async () => {
+test('FetchToState', () => {
   const {
       result,
       waitForNextUpdate
   } = renderHook(() => FetchToState(url));
-  // await waitForNextUpdate();
+
   expect(fetch).toHaveBeenCalled();
-  // expect(result.current[0]).toEqual('test-default-value');
-});
+  
+})
