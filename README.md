@@ -2,7 +2,7 @@
 
 This is my submission for the Coding Test for Bink. You can see the running version [here](https://lukies-meal-app.netlify.app/)
 
-All the user stories were implemented. As no particular requirements on styling other than the thumbnail, I just focused on making the information from the API clear and responsive.
+All the user stories were implemented. As no particular requirements on styling other than the thumbnail, I just focused on making the information from the API clear and responsive. For a more complex app, I would generally reach for something like styled components to keep CSS organised, but here I just used the singular CSS file for simplicity.
 
 ## Mock API Issue
 
