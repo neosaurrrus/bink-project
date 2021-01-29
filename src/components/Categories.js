@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import fetchToState from "../utils/fetchToState";
 import { Link } from "react-router-dom";
 
@@ -21,7 +21,6 @@ export const Categories = () => {
       <h2 data-testid="categories-heading">Categories</h2>
       {data.categories.map((category) => (
         <Link
-          to
           data-testid="category-link"
           key={category.idCategory}
           to={`/${category.strCategory}`}
