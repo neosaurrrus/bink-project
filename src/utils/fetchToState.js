@@ -1,6 +1,8 @@
 import { useState, useEffect} from 'react';
 
 export default function FetchToState(url){
+    //hook to fetch and store the returned data
+    let isSubscribed = true
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -8,15 +10,17 @@ export default function FetchToState(url){
         try{
             const response = await fetch(url)
             const data = await response.json()
-            setData(data)
-            setLoading(false)
+            
+              setData(data)
+              setLoading(false)
         } catch(e) {
             console.log(e)
         }
-      
     }
     useEffect(() => {
-            fetchUrl();
+            
+            if(isSubscribed) {fetchUrl()}
+            return () => {const localSubscribed = isSubscribed = false;}
         },[]);
     return [data,loading]
 }

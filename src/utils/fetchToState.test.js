@@ -17,7 +17,7 @@ afterEach(() => {
 
 const url = "https://test.com"
 
-test('FetchToState', async () => {
+test('FetchToState', () => {
   const {
       result,
       waitForNextUpdate
