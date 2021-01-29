@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my submission for the Coding Test for Bink.
+
+
+
+## Mock API Issue
+
+The unit testing is quite light due to a bug I wasn't able to resolve in time:
+
+I refactored the fetch call to the API and state update to a Custom Hook. However, mocking the response back from the API did not seem to work in react-testing-library when using a custom hook. 
+
+I tried:
+
+1. Overriding global fetch
+2. Using Jest Spy.on function
+3. The RenderHook function of React-Testing-Library
+
+Each time it had an issue, typically with the JSON that was being used. Which leads me to believe it is a simple issue with how the data is being structured. While I am comfortable with hooks and react-testing-library, I had not combined the two till this week!
+
+As a workaround in the time I had left, the testing is using the actual API call in a number of places which makes the tests more integration-based than Unit.
 
 ## Available Scripts
 
@@ -39,32 +57,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/'neosaurrrus'/bink-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+The gem is available as open source under the terms of the MIT License.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Code of Conduct
+Everyone interacting in the project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.

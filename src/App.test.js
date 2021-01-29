@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent, waitFor,cleanup} from '@testing-library/react';
+import App from './App'
 
-test('renders App Heading', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Meal App/i);
-  expect(linkElement).toBeInTheDocument();
+beforeEach(() => {
+  cleanup();
 });
+
+
+//Combined Unit and Integration test
+
+test('<App> is able to load and click on Beef Category', async () => {
+  render(< App/>);
+  const linkElement = screen.getByText(/Lukies Meal App/i);
+  expect(linkElement).toBeInTheDocument();
+  await waitFor(()=> screen.getByText('Beef'))
+  fireEvent.click(screen.getByText(/Beef/i))
+});
+
+

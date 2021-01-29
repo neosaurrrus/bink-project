@@ -24,5 +24,8 @@ test('FetchToState', () => {
   } = renderHook(() => FetchToState(url));
 
   expect(fetch).toHaveBeenCalled();
+<<<<<<< HEAD
   
+=======
+>>>>>>> test/additional-coverage
 })

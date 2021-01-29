@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Lukie's App for Hungry People (...that can cook)</h1>
+        <h1>Lukies Meal App</h1>
         <Switch>
           <Route exact path="/" component={Categories} />
           <Route path="/:id" component={Category} />
